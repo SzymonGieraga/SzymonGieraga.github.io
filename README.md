@@ -1,1 +1,1 @@
-# SzymonGieraga.github.io
+# Projekt-G-alfa

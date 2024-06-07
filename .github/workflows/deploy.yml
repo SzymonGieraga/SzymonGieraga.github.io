@@ -21,8 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install gh-pages
-        run: npm install -g gh-pages
+      - name: Set Git identity
+        run: |
+         git config --global user.email "245809@edu.p.lodz.pl"
+          git config --global user.name "SzymonGieraga"
 
       - name: Build the project
         run: npm run build

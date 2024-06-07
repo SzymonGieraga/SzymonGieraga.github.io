@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set Git identity
+        run: |
+          git config user.email "245809@edu.p.lodz.pl"
+          git config user.name "SzymonGieraga"
+
       - name: Build the project
         run: npm run build
 

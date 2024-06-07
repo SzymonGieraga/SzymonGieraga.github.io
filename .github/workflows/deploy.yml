@@ -24,12 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Set up git
-        run: |
-          git config user.email "245809@edu.p.lodz.pl"
-          git config user.name "SzymonGieraga"
-
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: gh-pages -d build
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}

@@ -21,15 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set Git identity
-        run: |
-          git config user.email "245809@edu.p.lodz.pl"
-          git config user.name "SzymonGieraga"
-
       - name: Build the project
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        run: ./node_modules/.bin/gh-pages -d build
-        env:
-          GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        run: |
+          git config --global user.email "245809@edu.p.lodz.pl"
+          git config --global user.name "SzymonGieraga"
+          ./node_modules/.bin/gh-pages -d build -u "SzymonGieraga" -t $GH_PAGES_TOKEN

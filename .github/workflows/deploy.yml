@@ -24,8 +24,11 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Set Git identity
         run: |
           git config --global user.email "245809@edu.p.lodz.pl"
           git config --global user.name "SzymonGieraga"
-          ./node_modules/.bin/gh-pages -d build -u "SzymonGieraga" -t $GH_PAGES_TOKEN
+
+      - name: Deploy to GitHub Pages
+        run: |
+          ./node_modules/.bin/gh-pages -d build -u "SzymonGieraga <245809@edu.p.lodz.pl>" -t $GH_PAGES_TOKEN

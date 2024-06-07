@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main  # lub master, zależnie od nazwy twojej głównej gałęzi
 
 jobs:
   build-and-deploy:
@@ -23,6 +23,11 @@ jobs:
 
       - name: Build the project
         run: npm run build
+
+      - name: Set up git
+        run: |
+          git config user.email "245809@edu.p.lodz.pl"
+          git config user.name "SzymonGieraga"
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
